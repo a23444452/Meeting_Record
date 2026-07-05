@@ -67,6 +67,30 @@ uv run meeting-record process meeting.mp4 \
   --llm-model <內部模型名>
 ```
 
+### 講者辨識（誰說的）
+
+用 pyannote `speaker-diarization-3.1` 把段落標成「講者1／講者2…」，是選配功能：
+
+```bash
+uv sync --extra diarize        # 安裝（會拉 torch，約需數 GB）
+```
+
+模型免費但需要 HuggingFace token：
+
+1. 註冊 [huggingface.co](https://huggingface.co)，並在
+   [segmentation-3.0](https://huggingface.co/pyannote/segmentation-3.0) 與
+   [speaker-diarization-3.1](https://huggingface.co/pyannote/speaker-diarization-3.1)
+   兩個模型頁按「Agree and access」
+2. 到 [Settings → Tokens](https://huggingface.co/settings/tokens) 建立 Read token
+3. `export HF_TOKEN=<token>`
+
+```bash
+uv run meeting-record process meeting.mp4 --diarize                  # 自動判斷人數
+uv run meeting-record process meeting.mp4 --diarize --num-speakers 4 # 已知人數更準
+```
+
+逐字稿會變成 `[00:01:23] 講者2: 這個由我來負責`，摘要的待辦事項也能對到發言人。
+
 ## 自訂摘要模板
 
 模板是 JSON（格式參考 Meetily），內建於 `src/meeting_record/templates/`。也可以直接指定自己的檔案：
@@ -106,6 +130,5 @@ uv run ruff check src tests # lint
 
 ## 已知限制／後續方向
 
-- **尚無講者辨識**（誰說的）：規劃以 pyannote/WhisperX 做成 optional extra
 - 尚無批次資料夾處理與 Teams 自動抓檔
 - 逐字稿與摘要都存在 `output/`（已 gitignore），內含會議內容請勿提交版控

@@ -10,6 +10,7 @@ from typing import Annotated
 import typer
 from rich.console import Console
 
+from .diarize import DiarizeError, assign_speakers, diarize
 from .extract import ExtractError, extract_audio
 from .models import format_timestamp
 from .output import OutputError, load_transcript, write_summary, write_transcript
@@ -20,7 +21,14 @@ from .transcribe import TranscribeError, transcribe
 app = typer.Typer(help="本地會議記錄工具：轉錄 Teams 錄影並生成會議紀錄", no_args_is_help=True)
 console = Console()
 
-KNOWN_ERRORS = (ExtractError, TranscribeError, SummarizeError, TemplateError, OutputError)
+KNOWN_ERRORS = (
+    ExtractError,
+    TranscribeError,
+    DiarizeError,
+    SummarizeError,
+    TemplateError,
+    OutputError,
+)
 
 
 def _make_client(llm_url: str, llm_model: str, provider: str, api_key: str | None) -> LLMClient:
@@ -41,6 +49,13 @@ def process(
     api_key: Annotated[str | None, typer.Option(envvar="MEETING_RECORD_API_KEY")] = None,
     output_dir: Annotated[Path, typer.Option("--output-dir", "-o")] = Path("output"),
     skip_summary: Annotated[bool, typer.Option("--skip-summary", help="只轉錄不摘要")] = False,
+    diarize_speakers: Annotated[
+        bool, typer.Option("--diarize", help="講者辨識（需 uv sync --extra diarize 與 HF token）")
+    ] = False,
+    num_speakers: Annotated[
+        int | None, typer.Option(help="已知講者人數時指定，可提升辨識準確度")
+    ] = None,
+    hf_token: Annotated[str | None, typer.Option(envvar="HF_TOKEN", help="HuggingFace token")] = None,
 ) -> None:
     """完整流程:抽音訊 → 轉錄 → 生成會議紀錄。"""
     try:
@@ -63,6 +78,15 @@ def process(
                     f"  [dim][{format_timestamp(seg.start)}][/dim] {seg.text}"
                 ),
             )
+
+            if diarize_speakers:
+                console.print("[cyan]講者辨識[/cyan] pyannote speaker-diarization-3.1")
+                turns = diarize(wav_path, hf_token=hf_token, num_speakers=num_speakers)
+                transcript = transcript.model_copy(
+                    update={"segments": assign_speakers(transcript.segments, turns)}
+                )
+                speakers = {s.speaker for s in transcript.segments if s.speaker}
+                console.print(f"  辨識出 [bold]{len(speakers)}[/bold] 位講者")
 
         transcript = transcript.model_copy(update={"source_file": input_file.name})
         md_path, json_path = write_transcript(transcript, meeting_dir)
