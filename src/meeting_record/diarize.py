@@ -12,13 +12,12 @@ from pydantic import BaseModel
 
 from .models import Segment
 
-DIARIZATION_MODEL = "pyannote/speaker-diarization-3.1"
+DIARIZATION_MODEL = "pyannote/speaker-diarization-community-1"
 
 TOKEN_HELP = (
     "pyannote 模型需要 HuggingFace token（免費）：\n"
-    "  1. 註冊 https://huggingface.co 並在以下兩個模型頁按「Agree and access」：\n"
-    "     https://huggingface.co/pyannote/segmentation-3.0\n"
-    "     https://huggingface.co/pyannote/speaker-diarization-3.1\n"
+    "  1. 註冊 https://huggingface.co 並在模型頁按「Agree and access」：\n"
+    "     https://huggingface.co/pyannote/speaker-diarization-community-1\n"
     "  2. 到 https://huggingface.co/settings/tokens 建立 Read token\n"
     "  3. export HF_TOKEN=<token> 或加 --hf-token 參數"
 )
@@ -56,7 +55,7 @@ def diarize(
         raise DiarizeError(f"缺少 HuggingFace token。\n{TOKEN_HELP}")
 
     try:
-        pipeline = Pipeline.from_pretrained(DIARIZATION_MODEL, use_auth_token=hf_token)
+        pipeline = Pipeline.from_pretrained(DIARIZATION_MODEL, token=hf_token)
         if pipeline is None:
             raise DiarizeError(
                 f"無法載入 {DIARIZATION_MODEL}，請確認已在模型頁同意條款。\n{TOKEN_HELP}"
@@ -65,7 +64,9 @@ def diarize(
             pipeline.to(torch.device("mps"))
 
         kwargs = {"num_speakers": num_speakers} if num_speakers else {}
-        annotation = pipeline(str(audio_path), **kwargs)
+        result = pipeline(str(audio_path), **kwargs)
+        # pyannote 4.x 回傳 DiarizeOutput，3.x 直接回傳 Annotation
+        annotation = getattr(result, "speaker_diarization", result)
     except DiarizeError:
         raise
     except Exception as exc:

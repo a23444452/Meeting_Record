@@ -69,7 +69,7 @@ uv run meeting-record process meeting.mp4 \
 
 ### 講者辨識（誰說的）
 
-用 pyannote `speaker-diarization-3.1` 把段落標成「講者1／講者2…」，是選配功能：
+用 pyannote `speaker-diarization-community-1` 把段落標成「講者1／講者2…」，是選配功能：
 
 ```bash
 uv sync --extra diarize        # 安裝（會拉 torch，約需數 GB）
@@ -78,9 +78,8 @@ uv sync --extra diarize        # 安裝（會拉 torch，約需數 GB）
 模型免費但需要 HuggingFace token：
 
 1. 註冊 [huggingface.co](https://huggingface.co)，並在
-   [segmentation-3.0](https://huggingface.co/pyannote/segmentation-3.0) 與
-   [speaker-diarization-3.1](https://huggingface.co/pyannote/speaker-diarization-3.1)
-   兩個模型頁按「Agree and access」
+   [speaker-diarization-community-1](https://huggingface.co/pyannote/speaker-diarization-community-1)
+   模型頁按「Agree and access」
 2. 到 [Settings → Tokens](https://huggingface.co/settings/tokens) 建立 Read token
 3. `export HF_TOKEN=<token>`
 

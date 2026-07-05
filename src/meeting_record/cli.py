@@ -80,7 +80,7 @@ def process(
             )
 
             if diarize_speakers:
-                console.print("[cyan]講者辨識[/cyan] pyannote speaker-diarization-3.1")
+                console.print("[cyan]講者辨識[/cyan] pyannote speaker-diarization-community-1")
                 turns = diarize(wav_path, hf_token=hf_token, num_speakers=num_speakers)
                 transcript = transcript.model_copy(
                     update={"segments": assign_speakers(transcript.segments, turns)}
