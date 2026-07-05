@@ -1,0 +1,26 @@
+{
+  "name": "標準會議紀錄",
+  "description": "一般會議通用模板：摘要、決議、待辦、討論重點",
+  "sections": [
+    {
+      "title": "會議摘要",
+      "instruction": "用一段話概述整場會議的目的與結論。",
+      "format": "paragraph"
+    },
+    {
+      "title": "重要決議",
+      "instruction": "條列會議中做成的決定。若沒有明確決議，寫「本次會議無正式決議」。",
+      "format": "list"
+    },
+    {
+      "title": "待辦事項",
+      "instruction": "用表格列出所有被指派的工作：負責人、事項、期限、對應的逐字稿時間戳。逐字稿中沒提到的欄位填「未提及」。",
+      "format": "table"
+    },
+    {
+      "title": "討論重點",
+      "instruction": "依主題摘要主要討論內容、各方論點與重要資訊。",
+      "format": "paragraph"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# 會議輸出（含公司內部資訊，不入版控）
+output/
+
+# Meetily 參考 repo
+reference/
+
+# macOS
+.DS_Store

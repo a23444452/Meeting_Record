@@ -1,0 +1,26 @@
+{
+  "name": "專案進度同步",
+  "description": "專案週會／進度會議模板：進度、風險、下一步",
+  "sections": [
+    {
+      "title": "會議摘要",
+      "instruction": "用一段話概述本次同步會議的重點。",
+      "format": "paragraph"
+    },
+    {
+      "title": "各項目進度",
+      "instruction": "依項目條列目前進度與狀態（正常／延遲／受阻）。",
+      "format": "list"
+    },
+    {
+      "title": "風險與阻礙",
+      "instruction": "條列會議中提到的風險、阻礙與需要協助的事項。",
+      "format": "list"
+    },
+    {
+      "title": "下一步行動",
+      "instruction": "用表格列出後續行動：負責人、事項、期限、對應時間戳。沒提到的欄位填「未提及」。",
+      "format": "table"
+    }
+  ]
+}
