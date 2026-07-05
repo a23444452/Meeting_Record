@@ -17,3 +17,6 @@ reference/
 
 # macOS
 .DS_Store
+
+# GUI 個人設定
+gui_settings.json

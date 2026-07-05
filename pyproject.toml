@@ -8,11 +8,15 @@ authors = [
 ]
 requires-python = ">=3.12"
 dependencies = [
+    "fastapi>=0.139.0",
     "faster-whisper>=1.2.1",
     "httpx>=0.28.1",
+    "markdown>=3.10.2",
     "pydantic>=2.13.4",
+    "python-multipart>=0.0.32",
     "rich>=15.0.0",
     "typer>=0.26.8",
+    "uvicorn>=0.50.0",
 ]
 
 [project.optional-dependencies]
@@ -29,6 +33,7 @@ build-backend = "uv_build"
 
 [dependency-groups]
 dev = [
+    "playwright>=1.61.0",
     "pytest>=9.1.1",
     "ruff>=0.15.20",
 ]

@@ -142,6 +142,26 @@ def resummarize(
 
 
 @app.command()
+def gui(
+    port: Annotated[int, typer.Option(help="伺服器埠號")] = 8765,
+    no_browser: Annotated[bool, typer.Option("--no-browser", help="不自動開瀏覽器")] = False,
+) -> None:
+    """啟動本地網頁介面（http://127.0.0.1:8765）。"""
+    import threading
+    import webbrowser
+
+    import uvicorn
+
+    from .gui.server import create_app
+
+    url = f"http://127.0.0.1:{port}"
+    console.print(f"[green]meeting-record GUI[/green] {url}（Ctrl+C 結束）")
+    if not no_browser:
+        threading.Timer(1.0, webbrowser.open, args=(url,)).start()
+    uvicorn.run(create_app(), host="127.0.0.1", port=port, log_level="warning")
+
+
+@app.command()
 def templates() -> None:
     """列出可用的摘要模板。"""
     for name, tpl in list_templates().items():
