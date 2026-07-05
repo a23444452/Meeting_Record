@@ -121,11 +121,92 @@ uv run pytest -q            # 測試
 uv run ruff check src tests # lint
 ```
 
-## Windows 同事部署注意
+## Windows 安裝與使用指南
 
-- 安裝 [uv](https://docs.astral.sh/uv/getting-started/installation/) 與 [ffmpeg](https://ffmpeg.org/download.html)（或 `winget install ffmpeg`）
-- faster-whisper 在 CPU 即可跑；有 NVIDIA GPU 時裝 CUDA 版 ctranslate2 可大幅加速
-- 其餘指令相同
+以下步驟在 **PowerShell**（Windows 10/11 內建）操作，指令與 macOS/Linux 的 bash 語法略有不同（用 `$env:變數` 取代 `export`）。
+
+### 1. 安裝必要工具
+
+**uv**（Python 套件與版本管理工具）：
+
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+> 若出現「因為這個系統上已停用指令碼執行」的錯誤，代表 PowerShell 執行原則擋住了安裝腳本；上面指令已用 `-ExecutionPolicy ByPass` 繞過，不需另外調整系統設定。
+
+安裝完成後**重新開啟一個新的 PowerShell 視窗**，確認：
+
+```powershell
+uv --version
+```
+
+**ffmpeg**（音訊擷取用）：
+
+```powershell
+winget install ffmpeg
+```
+
+裝完同樣要開新視窗，用 `ffmpeg -version` 確認能找到指令；若找不到，多半是 PATH 還沒刷新，登出重新登入 Windows 或重開機即可。
+
+**Ollama**（本地 LLM 摘要）：到 [ollama.com/download](https://ollama.com/download) 下載 Windows 安裝檔並執行，裝好後在 PowerShell 拉模型：
+
+```powershell
+ollama pull qwen3:8b
+```
+
+### 2. 下載專案並安裝相依套件
+
+```powershell
+git clone https://github.com/a23444452/Meeting_Record.git
+cd Meeting_Record
+uv sync
+```
+
+若機器沒裝 Git，也可以直接到 GitHub 頁面按「Code → Download ZIP」解壓縮後 `cd` 進去再執行 `uv sync`。
+
+### 3. 執行
+
+Windows 路徑通常含反斜線與空白，記得用**雙引號**包住檔案路徑：
+
+```powershell
+uv run meeting-record process "C:\Users\vince\Videos\teams_meeting.mp4"
+```
+
+其餘選項與 macOS 完全相同（`--template`、`--whisper-model`、`--diarize` 等），輸出同樣在專案目錄下的 `output\` 資料夾。
+
+### 4. 設定環境變數（HF_TOKEN、內部 LLM API Key）
+
+PowerShell 用 `$env:變數名` 讀寫環境變數，語法和 bash 的 `export` 不同：
+
+**只在目前這個視窗有效**（關掉視窗就消失，適合先測試）：
+
+```powershell
+$env:HF_TOKEN = "hf_xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+$env:MEETING_RECORD_API_KEY = "your-key"
+```
+
+**永久保存**（設定一次，之後每次開新視窗都會自動帶入，等同 macOS 寫進 `~/.zshrc`）：
+
+```powershell
+setx HF_TOKEN "hf_xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+```
+
+`setx` 設定後**必須開新的 PowerShell 視窗**才會生效，當前視窗不會立即套用。也可以在「開始功能表」搜尋「編輯系統環境變數」用圖形介面新增，效果相同。
+
+### 5. GPU 加速（有 NVIDIA 顯卡時，選用）
+
+faster-whisper 會自動偵測可用的 NVIDIA GPU；沒有 GPU 或沒裝 CUDA 也完全能跑，只是用 CPU（int8）處理，長會議轉錄時間會拉長。要啟用 GPU 加速需另外安裝對應版本的 [CUDA Toolkit 與 cuDNN](https://developer.nvidia.com/cuda-downloads)，公司機器若無顯卡可略過此步驟。
+
+### 6. 常見問題
+
+| 現象 | 原因與解法 |
+|---|---|
+| `uv : 無法辨識...` | 安裝後沒開新視窗，PATH 還沒刷新；重開 PowerShell 或登出重登 |
+| `ffmpeg 轉檔失敗` / 找不到 ffmpeg | 同上，或改用系統管理員身分重跑 `winget install ffmpeg` |
+| PowerShell 顯示「已停用指令碼執行」 | 只在安裝 uv 那個指令用到，照上面指令加 `-ExecutionPolicy ByPass` 即可，不需更改系統原則 |
+| 中文路徑或檔名亂碼 | 建議在「設定 → 時間與語言 → 語言與地區 → 系統管理語言設定」勾選「使用 Unicode UTF-8」 |
+| 連不上 Ollama（`http://localhost:11434`）| 確認 Ollama 應用程式（工作列圖示）有在執行中 |
 
 ## 已知限制／後續方向
 
