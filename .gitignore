@@ -1,0 +1,8 @@
+adapters/
+export/
+data/raw/
+.venv/
+__pycache__/
+*.gguf
+*.safetensors
+.DS_Store
