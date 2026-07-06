@@ -594,6 +594,7 @@ git commit -m "feat: 資料轉換為 MLX chat 格式並切分 270/20/10"
 
 Run: `uv run mlx_lm.lora --help 2>/dev/null || uv run python -m mlx_lm lora --help`
 Expected: 印出可用參數。**以 --help 實際輸出為準**，若下方 config 欄位名不符，修 config 對齊。
+特別確認：gradient accumulation 參數（spec 寫 batch 1 + accum 4）——若此版 mlx-lm 支援（如 `grad_accumulation_steps`）就補進 config；不支援則維持 `batch_size: 1`，等效於較小的有效 batch，屬可接受落差，於 config 註解記錄即可。
 
 - [ ] **Step 2: 寫訓練設定** `config/lora_config.yaml`：
 
