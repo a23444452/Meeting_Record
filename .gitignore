@@ -1,6 +1,5 @@
 adapters/
 export/
-data/raw/
 .venv/
 __pycache__/
 *.gguf
