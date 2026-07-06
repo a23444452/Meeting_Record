@@ -65,6 +65,24 @@ def test_transcript_too_short_fails():
     assert any("長度" in e for e in errors)
 
 
+def test_parse_action_items_stops_at_next_section():
+    summary_with_extra = GOOD_SUMMARY + """
+## 風險評估
+| 風險 | 影響 | 對策 |
+|------|------|------|
+| 人力不足 | 高 | 外包支援 |
+"""
+    items = parse_action_items(summary_with_extra)
+    assert items == [{"事項": "提出增援名單", "負責人": "小美", "期限": "未定"}]
+
+
+def test_empty_owner_fails():
+    bad = GOOD_SUMMARY.replace("| 提出增援名單 | 小美 | 未定 |",
+                               "| 提出增援名單 |  | 未定 |")
+    errors = check_record(make_record(summary=bad))
+    assert any("缺少負責人" in e for e in errors)
+
+
 def test_no_false_positive_on_legit_traditional_business_sentence():
     legit = (
         "會議紀錄：本次會議由財務部門召集，討論下一季度預算編列與資源配置事宜。"

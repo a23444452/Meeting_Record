@@ -40,7 +40,7 @@ def check_summary_structure(summary: str) -> list[str]:
 
 def parse_action_items(summary: str) -> list[dict]:
     """解析行動項目表格，回傳資料列；表格語法錯誤回傳空清單。"""
-    match = re.search(r"## 行動項目\s*\n(.*)", summary, re.S)
+    match = re.search(r"## 行動項目\s*\n(.*?)(?=\n## |\Z)", summary, re.S)
     if not match:
         return []
     rows = []
@@ -75,7 +75,9 @@ def check_record(rec: dict) -> list[str]:
         errors.append("行動項目表格缺失或語法錯誤")
     for item in items:
         owner = item["負責人"]
-        if owner != "待指派" and owner not in rec["transcript"]:
+        if not owner.strip():
+            errors.append(f"行動項目「{item['事項']}」缺少負責人")
+        elif owner != "待指派" and owner not in rec["transcript"]:
             errors.append(f"負責人「{owner}」未出現在逐字稿中")
     return errors
 
