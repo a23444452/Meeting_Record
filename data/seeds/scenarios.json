@@ -1,0 +1,3305 @@
+[
+  {
+    "id": "s001",
+    "industry": "科技軟體",
+    "meeting_type": "部門週會",
+    "num_participants": 8,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人中途加入",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s002",
+    "industry": "電子製造",
+    "meeting_type": "部門週會",
+    "num_participants": 4,
+    "length": "medium",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s003",
+    "industry": "電商零售",
+    "meeting_type": "部門週會",
+    "num_participants": 7,
+    "length": "short",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人中途加入",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s004",
+    "industry": "醫療院所",
+    "meeting_type": "部門週會",
+    "num_participants": 3,
+    "length": "short",
+    "noise_features": [
+      "有人中途加入"
+    ]
+  },
+  {
+    "id": "s005",
+    "industry": "金融保險",
+    "meeting_type": "部門週會",
+    "num_participants": 6,
+    "length": "short",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人中途加入",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s006",
+    "industry": "教育培訓",
+    "meeting_type": "部門週會",
+    "num_participants": 7,
+    "length": "long",
+    "noise_features": [
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s007",
+    "industry": "餐飲連鎖",
+    "meeting_type": "部門週會",
+    "num_participants": 3,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "口語贅詞偏多",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s008",
+    "industry": "行銷代理",
+    "meeting_type": "部門週會",
+    "num_participants": 3,
+    "length": "medium",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人中途加入",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s009",
+    "industry": "新創團隊",
+    "meeting_type": "部門週會",
+    "num_participants": 7,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）"
+    ]
+  },
+  {
+    "id": "s010",
+    "industry": "非營利組織",
+    "meeting_type": "部門週會",
+    "num_participants": 8,
+    "length": "medium",
+    "noise_features": [
+      "有人中途加入",
+      "有人提早離席",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s011",
+    "industry": "科技軟體",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 5,
+    "length": "short",
+    "noise_features": [
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s012",
+    "industry": "電子製造",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 8,
+    "length": "long",
+    "noise_features": [
+      "有人離題閒聊",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s013",
+    "industry": "電商零售",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 6,
+    "length": "short",
+    "noise_features": [
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s014",
+    "industry": "醫療院所",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 8,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s015",
+    "industry": "金融保險",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 3,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）"
+    ]
+  },
+  {
+    "id": "s016",
+    "industry": "教育培訓",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 7,
+    "length": "long",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人提早離席",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s017",
+    "industry": "餐飲連鎖",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 7,
+    "length": "long",
+    "noise_features": [
+      "有人離題閒聊",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s018",
+    "industry": "行銷代理",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 3,
+    "length": "short",
+    "noise_features": [
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s019",
+    "industry": "新創團隊",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 5,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）"
+    ]
+  },
+  {
+    "id": "s020",
+    "industry": "非營利組織",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 7,
+    "length": "medium",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人中途加入",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s021",
+    "industry": "科技軟體",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 8,
+    "length": "long",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人離題閒聊",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s022",
+    "industry": "電子製造",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 5,
+    "length": "short",
+    "noise_features": [
+      "口語贅詞偏多"
+    ]
+  },
+  {
+    "id": "s023",
+    "industry": "電商零售",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 8,
+    "length": "medium",
+    "noise_features": [
+      "有人中途加入",
+      "有人離題閒聊",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s024",
+    "industry": "醫療院所",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 7,
+    "length": "long",
+    "noise_features": [
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s025",
+    "industry": "金融保險",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 5,
+    "length": "medium",
+    "noise_features": [
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s026",
+    "industry": "教育培訓",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 8,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人中途加入"
+    ]
+  },
+  {
+    "id": "s027",
+    "industry": "餐飲連鎖",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 5,
+    "length": "long",
+    "noise_features": [
+      "口語贅詞偏多"
+    ]
+  },
+  {
+    "id": "s028",
+    "industry": "行銷代理",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 8,
+    "length": "medium",
+    "noise_features": [
+      "口語贅詞偏多",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s029",
+    "industry": "新創團隊",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 3,
+    "length": "short",
+    "noise_features": [
+      "有人離題閒聊",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s030",
+    "industry": "非營利組織",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 4,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人中途加入",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s031",
+    "industry": "科技軟體",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 7,
+    "length": "long",
+    "noise_features": [
+      "口語贅詞偏多"
+    ]
+  },
+  {
+    "id": "s032",
+    "industry": "電子製造",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 3,
+    "length": "medium",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人中途加入",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s033",
+    "industry": "電商零售",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 5,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人中途加入",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s034",
+    "industry": "醫療院所",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 4,
+    "length": "short",
+    "noise_features": [
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s035",
+    "industry": "金融保險",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 5,
+    "length": "medium",
+    "noise_features": [
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s036",
+    "industry": "教育培訓",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 4,
+    "length": "medium",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人離題閒聊",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s037",
+    "industry": "餐飲連鎖",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 7,
+    "length": "long",
+    "noise_features": [
+      "有人中途加入",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s038",
+    "industry": "行銷代理",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 4,
+    "length": "short",
+    "noise_features": [
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s039",
+    "industry": "新創團隊",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 6,
+    "length": "short",
+    "noise_features": [
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s040",
+    "industry": "非營利組織",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 8,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s041",
+    "industry": "科技軟體",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 5,
+    "length": "long",
+    "noise_features": [
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s042",
+    "industry": "電子製造",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 3,
+    "length": "long",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "口語贅詞偏多"
+    ]
+  },
+  {
+    "id": "s043",
+    "industry": "電商零售",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 4,
+    "length": "long",
+    "noise_features": [
+      "中英夾雜（技術詞彙）"
+    ]
+  },
+  {
+    "id": "s044",
+    "industry": "醫療院所",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 5,
+    "length": "short",
+    "noise_features": [
+      "有人提早離席",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s045",
+    "industry": "金融保險",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 3,
+    "length": "long",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人離題閒聊",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s046",
+    "industry": "教育培訓",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 5,
+    "length": "short",
+    "noise_features": [
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s047",
+    "industry": "餐飲連鎖",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 5,
+    "length": "long",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人中途加入",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s048",
+    "industry": "行銷代理",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 3,
+    "length": "medium",
+    "noise_features": [
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s049",
+    "industry": "新創團隊",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 4,
+    "length": "medium",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人中途加入",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s050",
+    "industry": "非營利組織",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 7,
+    "length": "short",
+    "noise_features": [
+      "有人提早離席",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s051",
+    "industry": "科技軟體",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 6,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "口語贅詞偏多",
+      "有人中途加入"
+    ]
+  },
+  {
+    "id": "s052",
+    "industry": "電子製造",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 7,
+    "length": "long",
+    "noise_features": [
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s053",
+    "industry": "電商零售",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 3,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "口語贅詞偏多",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s054",
+    "industry": "醫療院所",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 5,
+    "length": "medium",
+    "noise_features": [
+      "口語贅詞偏多",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s055",
+    "industry": "金融保險",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 7,
+    "length": "short",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s056",
+    "industry": "教育培訓",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 8,
+    "length": "medium",
+    "noise_features": [
+      "有人中途加入",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s057",
+    "industry": "餐飲連鎖",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 8,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s058",
+    "industry": "行銷代理",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 8,
+    "length": "short",
+    "noise_features": [
+      "有人中途加入",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s059",
+    "industry": "新創團隊",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 4,
+    "length": "long",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s060",
+    "industry": "非營利組織",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 8,
+    "length": "medium",
+    "noise_features": [
+      "有人中途加入",
+      "有人離題閒聊",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s061",
+    "industry": "科技軟體",
+    "meeting_type": "業績檢討會",
+    "num_participants": 6,
+    "length": "medium",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人中途加入",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s062",
+    "industry": "電子製造",
+    "meeting_type": "業績檢討會",
+    "num_participants": 4,
+    "length": "long",
+    "noise_features": [
+      "有人中途加入",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s063",
+    "industry": "電商零售",
+    "meeting_type": "業績檢討會",
+    "num_participants": 8,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s064",
+    "industry": "醫療院所",
+    "meeting_type": "業績檢討會",
+    "num_participants": 6,
+    "length": "long",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人中途加入",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s065",
+    "industry": "金融保險",
+    "meeting_type": "業績檢討會",
+    "num_participants": 8,
+    "length": "medium",
+    "noise_features": [
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s066",
+    "industry": "教育培訓",
+    "meeting_type": "業績檢討會",
+    "num_participants": 3,
+    "length": "medium",
+    "noise_features": [
+      "有人中途加入",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s067",
+    "industry": "餐飲連鎖",
+    "meeting_type": "業績檢討會",
+    "num_participants": 5,
+    "length": "medium",
+    "noise_features": [
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s068",
+    "industry": "行銷代理",
+    "meeting_type": "業績檢討會",
+    "num_participants": 8,
+    "length": "medium",
+    "noise_features": [
+      "有人提早離席",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s069",
+    "industry": "新創團隊",
+    "meeting_type": "業績檢討會",
+    "num_participants": 4,
+    "length": "short",
+    "noise_features": [
+      "口語贅詞偏多"
+    ]
+  },
+  {
+    "id": "s070",
+    "industry": "非營利組織",
+    "meeting_type": "業績檢討會",
+    "num_participants": 4,
+    "length": "medium",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人中途加入"
+    ]
+  },
+  {
+    "id": "s071",
+    "industry": "科技軟體",
+    "meeting_type": "供應商洽談",
+    "num_participants": 6,
+    "length": "short",
+    "noise_features": [
+      "有人中途加入",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s072",
+    "industry": "電子製造",
+    "meeting_type": "供應商洽談",
+    "num_participants": 4,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人中途加入",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s073",
+    "industry": "電商零售",
+    "meeting_type": "供應商洽談",
+    "num_participants": 6,
+    "length": "long",
+    "noise_features": [
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s074",
+    "industry": "醫療院所",
+    "meeting_type": "供應商洽談",
+    "num_participants": 8,
+    "length": "long",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "口語贅詞偏多",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s075",
+    "industry": "金融保險",
+    "meeting_type": "供應商洽談",
+    "num_participants": 4,
+    "length": "medium",
+    "noise_features": [
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s076",
+    "industry": "教育培訓",
+    "meeting_type": "供應商洽談",
+    "num_participants": 7,
+    "length": "short",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人中途加入"
+    ]
+  },
+  {
+    "id": "s077",
+    "industry": "餐飲連鎖",
+    "meeting_type": "供應商洽談",
+    "num_participants": 4,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）"
+    ]
+  },
+  {
+    "id": "s078",
+    "industry": "行銷代理",
+    "meeting_type": "供應商洽談",
+    "num_participants": 4,
+    "length": "short",
+    "noise_features": [
+      "有人中途加入",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s079",
+    "industry": "新創團隊",
+    "meeting_type": "供應商洽談",
+    "num_participants": 7,
+    "length": "long",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人中途加入",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s080",
+    "industry": "非營利組織",
+    "meeting_type": "供應商洽談",
+    "num_participants": 7,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s081",
+    "industry": "科技軟體",
+    "meeting_type": "部門週會",
+    "num_participants": 6,
+    "length": "long",
+    "noise_features": [
+      "有人離題閒聊",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s082",
+    "industry": "電子製造",
+    "meeting_type": "部門週會",
+    "num_participants": 7,
+    "length": "medium",
+    "noise_features": [
+      "有人提早離席",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s083",
+    "industry": "電商零售",
+    "meeting_type": "部門週會",
+    "num_participants": 5,
+    "length": "medium",
+    "noise_features": [
+      "口語贅詞偏多",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s084",
+    "industry": "醫療院所",
+    "meeting_type": "部門週會",
+    "num_participants": 4,
+    "length": "medium",
+    "noise_features": [
+      "有人提早離席",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s085",
+    "industry": "金融保險",
+    "meeting_type": "部門週會",
+    "num_participants": 7,
+    "length": "medium",
+    "noise_features": [
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s086",
+    "industry": "教育培訓",
+    "meeting_type": "部門週會",
+    "num_participants": 4,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）"
+    ]
+  },
+  {
+    "id": "s087",
+    "industry": "餐飲連鎖",
+    "meeting_type": "部門週會",
+    "num_participants": 8,
+    "length": "short",
+    "noise_features": [
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s088",
+    "industry": "行銷代理",
+    "meeting_type": "部門週會",
+    "num_participants": 4,
+    "length": "long",
+    "noise_features": [
+      "中英夾雜（技術詞彙）"
+    ]
+  },
+  {
+    "id": "s089",
+    "industry": "新創團隊",
+    "meeting_type": "部門週會",
+    "num_participants": 6,
+    "length": "long",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人中途加入"
+    ]
+  },
+  {
+    "id": "s090",
+    "industry": "非營利組織",
+    "meeting_type": "部門週會",
+    "num_participants": 6,
+    "length": "short",
+    "noise_features": [
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s091",
+    "industry": "科技軟體",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 6,
+    "length": "medium",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人中途加入"
+    ]
+  },
+  {
+    "id": "s092",
+    "industry": "電子製造",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 7,
+    "length": "long",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "口語贅詞偏多"
+    ]
+  },
+  {
+    "id": "s093",
+    "industry": "電商零售",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 5,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s094",
+    "industry": "醫療院所",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 7,
+    "length": "short",
+    "noise_features": [
+      "有人中途加入",
+      "有人提早離席",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s095",
+    "industry": "金融保險",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 6,
+    "length": "short",
+    "noise_features": [
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s096",
+    "industry": "教育培訓",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 6,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "口語贅詞偏多"
+    ]
+  },
+  {
+    "id": "s097",
+    "industry": "餐飲連鎖",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 5,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人提早離席",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s098",
+    "industry": "行銷代理",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 6,
+    "length": "long",
+    "noise_features": [
+      "有人中途加入"
+    ]
+  },
+  {
+    "id": "s099",
+    "industry": "新創團隊",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 7,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）"
+    ]
+  },
+  {
+    "id": "s100",
+    "industry": "非營利組織",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 7,
+    "length": "medium",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人中途加入",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s101",
+    "industry": "科技軟體",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 8,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s102",
+    "industry": "電子製造",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 4,
+    "length": "medium",
+    "noise_features": [
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s103",
+    "industry": "電商零售",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 6,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s104",
+    "industry": "醫療院所",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 5,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s105",
+    "industry": "金融保險",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 6,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "口語贅詞偏多"
+    ]
+  },
+  {
+    "id": "s106",
+    "industry": "教育培訓",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 3,
+    "length": "medium",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人中途加入",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s107",
+    "industry": "餐飲連鎖",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 4,
+    "length": "short",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人中途加入",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s108",
+    "industry": "行銷代理",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 4,
+    "length": "short",
+    "noise_features": [
+      "口語贅詞偏多"
+    ]
+  },
+  {
+    "id": "s109",
+    "industry": "新創團隊",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 7,
+    "length": "short",
+    "noise_features": [
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s110",
+    "industry": "非營利組織",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 4,
+    "length": "short",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s111",
+    "industry": "科技軟體",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 7,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）"
+    ]
+  },
+  {
+    "id": "s112",
+    "industry": "電子製造",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 8,
+    "length": "medium",
+    "noise_features": [
+      "有人離題閒聊",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s113",
+    "industry": "電商零售",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 7,
+    "length": "medium",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人提早離席",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s114",
+    "industry": "醫療院所",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 5,
+    "length": "medium",
+    "noise_features": [
+      "有人中途加入"
+    ]
+  },
+  {
+    "id": "s115",
+    "industry": "金融保險",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 3,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人中途加入"
+    ]
+  },
+  {
+    "id": "s116",
+    "industry": "教育培訓",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 6,
+    "length": "long",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人提早離席",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s117",
+    "industry": "餐飲連鎖",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 3,
+    "length": "medium",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人中途加入",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s118",
+    "industry": "行銷代理",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 7,
+    "length": "short",
+    "noise_features": [
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s119",
+    "industry": "新創團隊",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 7,
+    "length": "medium",
+    "noise_features": [
+      "有人提早離席",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s120",
+    "industry": "非營利組織",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 3,
+    "length": "long",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人提早離席",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s121",
+    "industry": "科技軟體",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 6,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "口語贅詞偏多"
+    ]
+  },
+  {
+    "id": "s122",
+    "industry": "電子製造",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 5,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人提早離席",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s123",
+    "industry": "電商零售",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 4,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人中途加入",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s124",
+    "industry": "醫療院所",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 6,
+    "length": "short",
+    "noise_features": [
+      "有人中途加入",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s125",
+    "industry": "金融保險",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 5,
+    "length": "long",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s126",
+    "industry": "教育培訓",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 5,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s127",
+    "industry": "餐飲連鎖",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 7,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人提早離席",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s128",
+    "industry": "行銷代理",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 3,
+    "length": "short",
+    "noise_features": [
+      "有人離題閒聊",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s129",
+    "industry": "新創團隊",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 6,
+    "length": "short",
+    "noise_features": [
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s130",
+    "industry": "非營利組織",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 5,
+    "length": "medium",
+    "noise_features": [
+      "有人中途加入",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s131",
+    "industry": "科技軟體",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 8,
+    "length": "medium",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人中途加入"
+    ]
+  },
+  {
+    "id": "s132",
+    "industry": "電子製造",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 7,
+    "length": "short",
+    "noise_features": [
+      "口語贅詞偏多"
+    ]
+  },
+  {
+    "id": "s133",
+    "industry": "電商零售",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 4,
+    "length": "long",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人提早離席",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s134",
+    "industry": "醫療院所",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 8,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s135",
+    "industry": "金融保險",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 6,
+    "length": "long",
+    "noise_features": [
+      "口語贅詞偏多"
+    ]
+  },
+  {
+    "id": "s136",
+    "industry": "教育培訓",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 5,
+    "length": "long",
+    "noise_features": [
+      "中英夾雜（技術詞彙）"
+    ]
+  },
+  {
+    "id": "s137",
+    "industry": "餐飲連鎖",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 8,
+    "length": "long",
+    "noise_features": [
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s138",
+    "industry": "行銷代理",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 8,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人提早離席",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s139",
+    "industry": "新創團隊",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 6,
+    "length": "medium",
+    "noise_features": [
+      "有人中途加入",
+      "有人提早離席",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s140",
+    "industry": "非營利組織",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 8,
+    "length": "short",
+    "noise_features": [
+      "有人提早離席",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s141",
+    "industry": "科技軟體",
+    "meeting_type": "業績檢討會",
+    "num_participants": 5,
+    "length": "long",
+    "noise_features": [
+      "口語贅詞偏多"
+    ]
+  },
+  {
+    "id": "s142",
+    "industry": "電子製造",
+    "meeting_type": "業績檢討會",
+    "num_participants": 8,
+    "length": "short",
+    "noise_features": [
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s143",
+    "industry": "電商零售",
+    "meeting_type": "業績檢討會",
+    "num_participants": 3,
+    "length": "short",
+    "noise_features": [
+      "有人中途加入",
+      "有人提早離席",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s144",
+    "industry": "醫療院所",
+    "meeting_type": "業績檢討會",
+    "num_participants": 4,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人中途加入",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s145",
+    "industry": "金融保險",
+    "meeting_type": "業績檢討會",
+    "num_participants": 3,
+    "length": "short",
+    "noise_features": [
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s146",
+    "industry": "教育培訓",
+    "meeting_type": "業績檢討會",
+    "num_participants": 4,
+    "length": "medium",
+    "noise_features": [
+      "有人離題閒聊",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s147",
+    "industry": "餐飲連鎖",
+    "meeting_type": "業績檢討會",
+    "num_participants": 3,
+    "length": "long",
+    "noise_features": [
+      "有人中途加入",
+      "有人離題閒聊",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s148",
+    "industry": "行銷代理",
+    "meeting_type": "業績檢討會",
+    "num_participants": 3,
+    "length": "short",
+    "noise_features": [
+      "有人中途加入"
+    ]
+  },
+  {
+    "id": "s149",
+    "industry": "新創團隊",
+    "meeting_type": "業績檢討會",
+    "num_participants": 5,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "口語贅詞偏多",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s150",
+    "industry": "非營利組織",
+    "meeting_type": "業績檢討會",
+    "num_participants": 3,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人中途加入",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s151",
+    "industry": "科技軟體",
+    "meeting_type": "供應商洽談",
+    "num_participants": 6,
+    "length": "long",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s152",
+    "industry": "電子製造",
+    "meeting_type": "供應商洽談",
+    "num_participants": 5,
+    "length": "short",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s153",
+    "industry": "電商零售",
+    "meeting_type": "供應商洽談",
+    "num_participants": 6,
+    "length": "medium",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人中途加入"
+    ]
+  },
+  {
+    "id": "s154",
+    "industry": "醫療院所",
+    "meeting_type": "供應商洽談",
+    "num_participants": 8,
+    "length": "short",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人中途加入",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s155",
+    "industry": "金融保險",
+    "meeting_type": "供應商洽談",
+    "num_participants": 7,
+    "length": "medium",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s156",
+    "industry": "教育培訓",
+    "meeting_type": "供應商洽談",
+    "num_participants": 3,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人中途加入",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s157",
+    "industry": "餐飲連鎖",
+    "meeting_type": "供應商洽談",
+    "num_participants": 7,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s158",
+    "industry": "行銷代理",
+    "meeting_type": "供應商洽談",
+    "num_participants": 5,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "口語贅詞偏多",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s159",
+    "industry": "新創團隊",
+    "meeting_type": "供應商洽談",
+    "num_participants": 7,
+    "length": "medium",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人中途加入",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s160",
+    "industry": "非營利組織",
+    "meeting_type": "供應商洽談",
+    "num_participants": 5,
+    "length": "short",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人中途加入",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s161",
+    "industry": "科技軟體",
+    "meeting_type": "部門週會",
+    "num_participants": 4,
+    "length": "long",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人提早離席",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s162",
+    "industry": "電子製造",
+    "meeting_type": "部門週會",
+    "num_participants": 6,
+    "length": "long",
+    "noise_features": [
+      "有人中途加入",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s163",
+    "industry": "電商零售",
+    "meeting_type": "部門週會",
+    "num_participants": 6,
+    "length": "medium",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s164",
+    "industry": "醫療院所",
+    "meeting_type": "部門週會",
+    "num_participants": 5,
+    "length": "long",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "口語贅詞偏多",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s165",
+    "industry": "金融保險",
+    "meeting_type": "部門週會",
+    "num_participants": 8,
+    "length": "short",
+    "noise_features": [
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s166",
+    "industry": "教育培訓",
+    "meeting_type": "部門週會",
+    "num_participants": 8,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人提早離席",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s167",
+    "industry": "餐飲連鎖",
+    "meeting_type": "部門週會",
+    "num_participants": 3,
+    "length": "medium",
+    "noise_features": [
+      "有人提早離席",
+      "有人離題閒聊",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s168",
+    "industry": "行銷代理",
+    "meeting_type": "部門週會",
+    "num_participants": 4,
+    "length": "short",
+    "noise_features": [
+      "口語贅詞偏多"
+    ]
+  },
+  {
+    "id": "s169",
+    "industry": "新創團隊",
+    "meeting_type": "部門週會",
+    "num_participants": 4,
+    "length": "long",
+    "noise_features": [
+      "有人中途加入",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s170",
+    "industry": "非營利組織",
+    "meeting_type": "部門週會",
+    "num_participants": 5,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "口語贅詞偏多"
+    ]
+  },
+  {
+    "id": "s171",
+    "industry": "科技軟體",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 8,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s172",
+    "industry": "電子製造",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 5,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人中途加入",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s173",
+    "industry": "電商零售",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 3,
+    "length": "long",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "口語贅詞偏多",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s174",
+    "industry": "醫療院所",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 7,
+    "length": "short",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s175",
+    "industry": "金融保險",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 4,
+    "length": "medium",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人中途加入",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s176",
+    "industry": "教育培訓",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 8,
+    "length": "medium",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人中途加入"
+    ]
+  },
+  {
+    "id": "s177",
+    "industry": "餐飲連鎖",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 4,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人中途加入"
+    ]
+  },
+  {
+    "id": "s178",
+    "industry": "行銷代理",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 5,
+    "length": "medium",
+    "noise_features": [
+      "有人中途加入"
+    ]
+  },
+  {
+    "id": "s179",
+    "industry": "新創團隊",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 6,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "口語贅詞偏多",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s180",
+    "industry": "非營利組織",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 5,
+    "length": "medium",
+    "noise_features": [
+      "有人提早離席",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s181",
+    "industry": "科技軟體",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 8,
+    "length": "medium",
+    "noise_features": [
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s182",
+    "industry": "電子製造",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 5,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s183",
+    "industry": "電商零售",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 5,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "口語贅詞偏多",
+      "有人中途加入"
+    ]
+  },
+  {
+    "id": "s184",
+    "industry": "醫療院所",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 6,
+    "length": "medium",
+    "noise_features": [
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s185",
+    "industry": "金融保險",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 5,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "口語贅詞偏多"
+    ]
+  },
+  {
+    "id": "s186",
+    "industry": "教育培訓",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 7,
+    "length": "medium",
+    "noise_features": [
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s187",
+    "industry": "餐飲連鎖",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 7,
+    "length": "long",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "口語贅詞偏多"
+    ]
+  },
+  {
+    "id": "s188",
+    "industry": "行銷代理",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 4,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人中途加入",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s189",
+    "industry": "新創團隊",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 8,
+    "length": "short",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s190",
+    "industry": "非營利組織",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 5,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人離題閒聊",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s191",
+    "industry": "科技軟體",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 8,
+    "length": "short",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s192",
+    "industry": "電子製造",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 8,
+    "length": "medium",
+    "noise_features": [
+      "有人提早離席",
+      "有人離題閒聊",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s193",
+    "industry": "電商零售",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 7,
+    "length": "long",
+    "noise_features": [
+      "有人中途加入"
+    ]
+  },
+  {
+    "id": "s194",
+    "industry": "醫療院所",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 6,
+    "length": "medium",
+    "noise_features": [
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s195",
+    "industry": "金融保險",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 3,
+    "length": "medium",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s196",
+    "industry": "教育培訓",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 6,
+    "length": "medium",
+    "noise_features": [
+      "有人中途加入",
+      "有人提早離席",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s197",
+    "industry": "餐飲連鎖",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 6,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s198",
+    "industry": "行銷代理",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 6,
+    "length": "long",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人提早離席",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s199",
+    "industry": "新創團隊",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 7,
+    "length": "medium",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人提早離席",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s200",
+    "industry": "非營利組織",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 5,
+    "length": "short",
+    "noise_features": [
+      "有人中途加入",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s201",
+    "industry": "科技軟體",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 5,
+    "length": "long",
+    "noise_features": [
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s202",
+    "industry": "電子製造",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 8,
+    "length": "long",
+    "noise_features": [
+      "有人中途加入",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s203",
+    "industry": "電商零售",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 8,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s204",
+    "industry": "醫療院所",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 7,
+    "length": "short",
+    "noise_features": [
+      "有人提早離席",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s205",
+    "industry": "金融保險",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 7,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人提早離席",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s206",
+    "industry": "教育培訓",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 4,
+    "length": "long",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人中途加入",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s207",
+    "industry": "餐飲連鎖",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 4,
+    "length": "short",
+    "noise_features": [
+      "口語贅詞偏多",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s208",
+    "industry": "行銷代理",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 8,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s209",
+    "industry": "新創團隊",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 6,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人提早離席",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s210",
+    "industry": "非營利組織",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 3,
+    "length": "short",
+    "noise_features": [
+      "有人中途加入"
+    ]
+  },
+  {
+    "id": "s211",
+    "industry": "科技軟體",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 7,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "口語贅詞偏多"
+    ]
+  },
+  {
+    "id": "s212",
+    "industry": "電子製造",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 3,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "口語贅詞偏多",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s213",
+    "industry": "電商零售",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 6,
+    "length": "long",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "口語贅詞偏多",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s214",
+    "industry": "醫療院所",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 5,
+    "length": "long",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人中途加入"
+    ]
+  },
+  {
+    "id": "s215",
+    "industry": "金融保險",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 8,
+    "length": "medium",
+    "noise_features": [
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s216",
+    "industry": "教育培訓",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 8,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人提早離席",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s217",
+    "industry": "餐飲連鎖",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 7,
+    "length": "long",
+    "noise_features": [
+      "有人中途加入"
+    ]
+  },
+  {
+    "id": "s218",
+    "industry": "行銷代理",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 3,
+    "length": "short",
+    "noise_features": [
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s219",
+    "industry": "新創團隊",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 8,
+    "length": "medium",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s220",
+    "industry": "非營利組織",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 6,
+    "length": "short",
+    "noise_features": [
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s221",
+    "industry": "科技軟體",
+    "meeting_type": "業績檢討會",
+    "num_participants": 8,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）"
+    ]
+  },
+  {
+    "id": "s222",
+    "industry": "電子製造",
+    "meeting_type": "業績檢討會",
+    "num_participants": 4,
+    "length": "medium",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人中途加入",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s223",
+    "industry": "電商零售",
+    "meeting_type": "業績檢討會",
+    "num_participants": 5,
+    "length": "short",
+    "noise_features": [
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s224",
+    "industry": "醫療院所",
+    "meeting_type": "業績檢討會",
+    "num_participants": 5,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s225",
+    "industry": "金融保險",
+    "meeting_type": "業績檢討會",
+    "num_participants": 4,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人中途加入",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s226",
+    "industry": "教育培訓",
+    "meeting_type": "業績檢討會",
+    "num_participants": 4,
+    "length": "short",
+    "noise_features": [
+      "口語贅詞偏多"
+    ]
+  },
+  {
+    "id": "s227",
+    "industry": "餐飲連鎖",
+    "meeting_type": "業績檢討會",
+    "num_participants": 7,
+    "length": "medium",
+    "noise_features": [
+      "有人中途加入",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s228",
+    "industry": "行銷代理",
+    "meeting_type": "業績檢討會",
+    "num_participants": 6,
+    "length": "long",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人提早離席",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s229",
+    "industry": "新創團隊",
+    "meeting_type": "業績檢討會",
+    "num_participants": 8,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s230",
+    "industry": "非營利組織",
+    "meeting_type": "業績檢討會",
+    "num_participants": 8,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）"
+    ]
+  },
+  {
+    "id": "s231",
+    "industry": "科技軟體",
+    "meeting_type": "供應商洽談",
+    "num_participants": 5,
+    "length": "medium",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人中途加入",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s232",
+    "industry": "電子製造",
+    "meeting_type": "供應商洽談",
+    "num_participants": 6,
+    "length": "short",
+    "noise_features": [
+      "有人中途加入",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s233",
+    "industry": "電商零售",
+    "meeting_type": "供應商洽談",
+    "num_participants": 8,
+    "length": "short",
+    "noise_features": [
+      "有人提早離席",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s234",
+    "industry": "醫療院所",
+    "meeting_type": "供應商洽談",
+    "num_participants": 6,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s235",
+    "industry": "金融保險",
+    "meeting_type": "供應商洽談",
+    "num_participants": 6,
+    "length": "short",
+    "noise_features": [
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s236",
+    "industry": "教育培訓",
+    "meeting_type": "供應商洽談",
+    "num_participants": 6,
+    "length": "short",
+    "noise_features": [
+      "有人中途加入",
+      "有人提早離席",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s237",
+    "industry": "餐飲連鎖",
+    "meeting_type": "供應商洽談",
+    "num_participants": 8,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "口語贅詞偏多"
+    ]
+  },
+  {
+    "id": "s238",
+    "industry": "行銷代理",
+    "meeting_type": "供應商洽談",
+    "num_participants": 5,
+    "length": "medium",
+    "noise_features": [
+      "有人中途加入"
+    ]
+  },
+  {
+    "id": "s239",
+    "industry": "新創團隊",
+    "meeting_type": "供應商洽談",
+    "num_participants": 8,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "口語贅詞偏多",
+      "有人中途加入"
+    ]
+  },
+  {
+    "id": "s240",
+    "industry": "非營利組織",
+    "meeting_type": "供應商洽談",
+    "num_participants": 5,
+    "length": "long",
+    "noise_features": [
+      "有人中途加入"
+    ]
+  },
+  {
+    "id": "s241",
+    "industry": "科技軟體",
+    "meeting_type": "部門週會",
+    "num_participants": 5,
+    "length": "short",
+    "noise_features": [
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s242",
+    "industry": "電子製造",
+    "meeting_type": "部門週會",
+    "num_participants": 4,
+    "length": "short",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人離題閒聊",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s243",
+    "industry": "電商零售",
+    "meeting_type": "部門週會",
+    "num_participants": 8,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "口語贅詞偏多",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s244",
+    "industry": "醫療院所",
+    "meeting_type": "部門週會",
+    "num_participants": 3,
+    "length": "short",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人離題閒聊",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s245",
+    "industry": "金融保險",
+    "meeting_type": "部門週會",
+    "num_participants": 5,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s246",
+    "industry": "教育培訓",
+    "meeting_type": "部門週會",
+    "num_participants": 4,
+    "length": "short",
+    "noise_features": [
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s247",
+    "industry": "餐飲連鎖",
+    "meeting_type": "部門週會",
+    "num_participants": 7,
+    "length": "short",
+    "noise_features": [
+      "有人中途加入",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s248",
+    "industry": "行銷代理",
+    "meeting_type": "部門週會",
+    "num_participants": 5,
+    "length": "medium",
+    "noise_features": [
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s249",
+    "industry": "新創團隊",
+    "meeting_type": "部門週會",
+    "num_participants": 6,
+    "length": "short",
+    "noise_features": [
+      "有人提早離席",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s250",
+    "industry": "非營利組織",
+    "meeting_type": "部門週會",
+    "num_participants": 3,
+    "length": "medium",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s251",
+    "industry": "科技軟體",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 4,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人提早離席",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s252",
+    "industry": "電子製造",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 3,
+    "length": "short",
+    "noise_features": [
+      "口語贅詞偏多",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s253",
+    "industry": "電商零售",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 7,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）"
+    ]
+  },
+  {
+    "id": "s254",
+    "industry": "醫療院所",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 5,
+    "length": "long",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人提早離席",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s255",
+    "industry": "金融保險",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 8,
+    "length": "medium",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s256",
+    "industry": "教育培訓",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 6,
+    "length": "medium",
+    "noise_features": [
+      "有人中途加入"
+    ]
+  },
+  {
+    "id": "s257",
+    "industry": "餐飲連鎖",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 7,
+    "length": "medium",
+    "noise_features": [
+      "有人中途加入",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s258",
+    "industry": "行銷代理",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 8,
+    "length": "short",
+    "noise_features": [
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s259",
+    "industry": "新創團隊",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 6,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "口語贅詞偏多",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s260",
+    "industry": "非營利組織",
+    "meeting_type": "專案進度檢討",
+    "num_participants": 4,
+    "length": "short",
+    "noise_features": [
+      "口語贅詞偏多"
+    ]
+  },
+  {
+    "id": "s261",
+    "industry": "科技軟體",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 5,
+    "length": "medium",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s262",
+    "industry": "電子製造",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 4,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人中途加入",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s263",
+    "industry": "電商零售",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 5,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人中途加入",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s264",
+    "industry": "醫療院所",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 7,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人提早離席",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s265",
+    "industry": "金融保險",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 8,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）"
+    ]
+  },
+  {
+    "id": "s266",
+    "industry": "教育培訓",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 7,
+    "length": "short",
+    "noise_features": [
+      "口語贅詞偏多",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s267",
+    "industry": "餐飲連鎖",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 8,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s268",
+    "industry": "行銷代理",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 6,
+    "length": "long",
+    "noise_features": [
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s269",
+    "industry": "新創團隊",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 3,
+    "length": "long",
+    "noise_features": [
+      "有人中途加入",
+      "有人提早離席",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s270",
+    "industry": "非營利組織",
+    "meeting_type": "客戶需求訪談",
+    "num_participants": 3,
+    "length": "medium",
+    "noise_features": [
+      "有人離題閒聊",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s271",
+    "industry": "科技軟體",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 3,
+    "length": "short",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s272",
+    "industry": "電子製造",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 8,
+    "length": "short",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人中途加入",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s273",
+    "industry": "電商零售",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 5,
+    "length": "long",
+    "noise_features": [
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s274",
+    "industry": "醫療院所",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 7,
+    "length": "medium",
+    "noise_features": [
+      "口語贅詞偏多"
+    ]
+  },
+  {
+    "id": "s275",
+    "industry": "金融保險",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 7,
+    "length": "long",
+    "noise_features": [
+      "有人中途加入"
+    ]
+  },
+  {
+    "id": "s276",
+    "industry": "教育培訓",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 4,
+    "length": "short",
+    "noise_features": [
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s277",
+    "industry": "餐飲連鎖",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 4,
+    "length": "short",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人離題閒聊",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s278",
+    "industry": "行銷代理",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 4,
+    "length": "medium",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人離題閒聊",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s279",
+    "industry": "新創團隊",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 8,
+    "length": "medium",
+    "noise_features": [
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s280",
+    "industry": "非營利組織",
+    "meeting_type": "跨部門協調會",
+    "num_participants": 3,
+    "length": "short",
+    "noise_features": [
+      "有人中途加入",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s281",
+    "industry": "科技軟體",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 5,
+    "length": "medium",
+    "noise_features": [
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s282",
+    "industry": "電子製造",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 5,
+    "length": "long",
+    "noise_features": [
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s283",
+    "industry": "電商零售",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 8,
+    "length": "short",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人中途加入"
+    ]
+  },
+  {
+    "id": "s284",
+    "industry": "醫療院所",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 8,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）"
+    ]
+  },
+  {
+    "id": "s285",
+    "industry": "金融保險",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 6,
+    "length": "long",
+    "noise_features": [
+      "有人中途加入",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s286",
+    "industry": "教育培訓",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 3,
+    "length": "short",
+    "noise_features": [
+      "有人中途加入",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s287",
+    "industry": "餐飲連鎖",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 7,
+    "length": "short",
+    "noise_features": [
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s288",
+    "industry": "行銷代理",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 8,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "口語贅詞偏多",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s289",
+    "industry": "新創團隊",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 3,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s290",
+    "industry": "非營利組織",
+    "meeting_type": "緊急事故處理",
+    "num_participants": 8,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）"
+    ]
+  },
+  {
+    "id": "s291",
+    "industry": "科技軟體",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 8,
+    "length": "medium",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s292",
+    "industry": "電子製造",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 5,
+    "length": "short",
+    "noise_features": [
+      "口語贅詞偏多",
+      "有人提早離席",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s293",
+    "industry": "電商零售",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 5,
+    "length": "long",
+    "noise_features": [
+      "有人中途加入",
+      "有人提早離席",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s294",
+    "industry": "醫療院所",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 6,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人中途加入",
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s295",
+    "industry": "金融保險",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 7,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "口語贅詞偏多",
+      "有人中途加入"
+    ]
+  },
+  {
+    "id": "s296",
+    "industry": "教育培訓",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 8,
+    "length": "short",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人中途加入",
+      "有人離題閒聊"
+    ]
+  },
+  {
+    "id": "s297",
+    "industry": "餐飲連鎖",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 6,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）"
+    ]
+  },
+  {
+    "id": "s298",
+    "industry": "行銷代理",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 5,
+    "length": "medium",
+    "noise_features": [
+      "中英夾雜（技術詞彙）",
+      "有人提早離席"
+    ]
+  },
+  {
+    "id": "s299",
+    "industry": "新創團隊",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 8,
+    "length": "short",
+    "noise_features": [
+      "發言互相打斷"
+    ]
+  },
+  {
+    "id": "s300",
+    "industry": "非營利組織",
+    "meeting_type": "產品規劃會議",
+    "num_participants": 6,
+    "length": "short",
+    "noise_features": [
+      "有人提早離席",
+      "發言互相打斷"
+    ]
+  }
+]
