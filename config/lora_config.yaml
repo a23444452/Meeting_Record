@@ -16,7 +16,8 @@ adapter_path: "adapters"
 save_every: 100
 max_seq_length: 4096
 grad_checkpoint: true
-mask_prompt: true            # 只對 assistant（摘要）部分算 loss，長逐字稿輸入時效果更好
+# mask_prompt 勿開：mlx-lm 0.29.1 對 chat 資料集的 prompt 遮罩對位有誤，
+# val loss 假性下降但生成逐步退化（iter 300 空輸出、iter 600 <tool_call> 迴圈），已實測驗證。
 lora_parameters:
   keys: ["self_attn.q_proj", "self_attn.k_proj", "self_attn.v_proj", "self_attn.o_proj"]
   rank: 16
