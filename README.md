@@ -10,6 +10,10 @@ Teams 錄影 (mp4) → ffmpeg 抽音訊 → faster-whisper 本地轉錄 → Olla
                                     transcript.md/.json        summary.md
 ```
 
+> **模型訓練層**：[`training/`](training/) 子專案是本工具摘要模型的 LoRA 微調 pipeline，
+> 用合成的繁中會議資料微調 Qwen3-4B，產出 Ollama 模型 `meeting-minutes-zh-tw`——
+> 可取代預設的 `qwen3:8b` 作為專用摘要模型。詳見 [training/README.md](training/README.md)。
+
 ## 需求
 
 - Python 3.12+、[uv](https://docs.astral.sh/uv/)
