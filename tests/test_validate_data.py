@@ -98,3 +98,10 @@ def test_simplified_chars_extended_set():
     assert find_simplified_chars("晓琪拟定选择方案") >= {"晓", "拟", "择"}
     # 這些正體字不得誤判
     assert find_simplified_chars("曉琪擬定選擇方案，蘭花繼續確認") == set()
+
+
+def test_parse_action_items_ignores_alignment_separator():
+    # Markdown 對齊語法分隔線（:---: / ---: / :---）不得被當成資料列
+    summary = GOOD_SUMMARY.replace("|------|--------|------|", "|:-----|:------:|-----:|")
+    items = parse_action_items(summary)
+    assert items == [{"事項": "提出增援名單", "負責人": "小美", "期限": "未定"}]

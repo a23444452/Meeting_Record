@@ -5,7 +5,14 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-LLAMACPP="${LLAMACPP_DIR:-/private/tmp/claude-501/-Users-vincewang-LoRA-Model/e7d82cb0-58a7-48a7-ab09-93494244bacd/scratchpad/llamacpp}"
+# llama.cpp repo 路徑（用於 convert_hf_to_gguf.py）。預設 repo 內 third_party/，
+# 可用環境變數覆蓋：LLAMACPP_DIR=/path/to/llama.cpp scripts/export.sh
+LLAMACPP="${LLAMACPP_DIR:-./third_party/llama.cpp}"
+if [ ! -f "$LLAMACPP/convert_hf_to_gguf.py" ]; then
+  echo "找不到 $LLAMACPP/convert_hf_to_gguf.py" >&2
+  echo "請 git clone --depth 1 https://github.com/ggml-org/llama.cpp \$LLAMACPP，或設 LLAMACPP_DIR 環境變數" >&2
+  exit 1
+fi
 
 if [ ! -d export/fused ]; then
   echo "=== 1/4 fuse（合併 LoRA，dequantize 輸出全精度 HF 權重）==="

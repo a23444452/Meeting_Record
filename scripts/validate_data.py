@@ -49,7 +49,8 @@ def parse_action_items(summary: str) -> list[dict]:
     lines = [l.strip() for l in match.group(1).splitlines() if l.strip().startswith("|")]
     for line in lines:
         cells = [c.strip() for c in line.strip("|").split("|")]
-        if len(cells) != 3 or set(cells[0]) <= {"-", " "} or cells[0] == "事項":
+        # 跳過分隔線（含 Markdown 對齊語法 :---: / ---: / :---）與表頭
+        if len(cells) != 3 or set(cells[0]) <= {"-", " ", ":"} or cells[0] == "事項":
             continue
         rows.append(dict(zip(["事項", "負責人", "期限"], cells)))
     return rows
@@ -77,6 +78,9 @@ def check_record(rec: dict) -> list[str]:
         errors.append("行動項目表格缺失或語法錯誤")
     for item in items:
         owner = item["負責人"]
+        # 已知限制：對應性用子字串比對。單字名幾乎必命中、
+        # 摘要負責人為逐字稿人名的超字串時（如「小明」vs「小明華」）可能漏判。
+        # 合成資料負責人多為 2-3 字暱稱，實際觸發率低；如需嚴格可改詞邊界比對。
         if not owner.strip():
             errors.append(f"行動項目「{item['事項']}」缺少負責人")
         elif owner != "待指派" and owner not in rec["transcript"]:
