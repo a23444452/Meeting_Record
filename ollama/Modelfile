@@ -1,0 +1,19 @@
+FROM ../export/fused
+
+# 注意：template 結尾的空 <think> 區塊是必要的（見 .claude/lessons.md L1）——
+# Qwen3-2507 訓練序列中 assistant 內容前恆有此區塊，缺少會使微調模型生成退化。
+TEMPLATE """{{- range .Messages }}<|im_start|>{{ .Role }}
+{{ .Content }}<|im_end|>
+{{ end }}<|im_start|>assistant
+<think>
+
+</think>
+
+"""
+
+SYSTEM """__SYSTEM_PROMPT__"""
+
+PARAMETER temperature 0.3
+PARAMETER top_p 0.9
+PARAMETER num_ctx 8192
+PARAMETER stop <|im_end|>
