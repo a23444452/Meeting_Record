@@ -1,5 +1,6 @@
 adapters/
 export/
+eval_outputs/
 .venv/
 __pycache__/
 *.gguf
