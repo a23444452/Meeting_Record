@@ -9,6 +9,10 @@ from scripts.validate_data import (
 
 MODEL = "mlx-community/Qwen3-4B-Instruct-2507-4bit"
 MAX_TOKENS = 1024
+# Qwen3-2507 template 渲染對話歷史時，assistant 內容前恆有空 think 區塊，
+# 但 add_generation_prompt 不會補上——訓練/推論分布不一致會使微調後模型
+# 生成退化（空輸出、模板 token 迴圈）。推論 prompt 必須補齊，與訓練對齊。
+THINK_BLOCK = "<think>\n\n</think>\n\n"
 
 
 def score_output(text: str) -> dict:
@@ -29,6 +33,7 @@ def run_inference(adapter_path: str | None, cases: list[dict], outdir: Path) -> 
     for i, case in enumerate(cases):
         messages = case["messages"][:2]  # system + user
         prompt = tokenizer.apply_chat_template(messages, add_generation_prompt=True)
+        prompt = prompt + tokenizer.encode(THINK_BLOCK, add_special_tokens=False)
         text = generate(model, tokenizer, prompt=prompt,
                         max_tokens=MAX_TOKENS, sampler=make_sampler(temp=0.0))
         (outdir / f"case_{i:02d}.md").write_text(text, encoding="utf-8")
