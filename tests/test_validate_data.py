@@ -91,3 +91,10 @@ def test_no_false_positive_on_legit_traditional_business_sentence():
         "並於下次會議前完成相關文件的整理與歸檔工作。"
     )
     assert find_simplified_chars(legit) == set()
+
+
+def test_simplified_chars_extended_set():
+    # 2026-07-08 評估發現的漏網字必須被偵測
+    assert find_simplified_chars("晓琪拟定选择方案") >= {"晓", "拟", "择"}
+    # 這些正體字不得誤判
+    assert find_simplified_chars("曉琪擬定選擇方案，蘭花繼續確認") == set()
