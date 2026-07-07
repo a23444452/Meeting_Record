@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>meeting-record — 本地會議記錄</title>
+<style>
+  :root {
+    --bg: #f5f6f8; --card: #ffffff; --border: #e2e5ea;
+    --text: #1f2430; --muted: #6b7280; --accent: #2563eb; --accent-soft: #eff4ff;
+    --ok: #16a34a; --err: #dc2626; --warn: #d97706;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", system-ui, sans-serif;
+    font-size: 15px; line-height: 1.6;
+  }
+  header {
+    background: var(--card); border-bottom: 1px solid var(--border);
+    padding: 0 24px; display: flex; align-items: center; gap: 24px;
+  }
+  header h1 { font-size: 17px; margin: 14px 0; }
+  header h1 span { color: var(--accent); }
+  nav { display: flex; gap: 4px; }
+  nav button {
+    border: 0; background: none; padding: 16px 14px; cursor: pointer;
+    font-size: 15px; color: var(--muted); border-bottom: 2px solid transparent;
+  }
+  nav button.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
+  main { max-width: 900px; margin: 24px auto; padding: 0 16px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 16px; }
+  h2 { font-size: 16px; margin: 0 0 12px; }
+  h3 { font-size: 15px; margin: 16px 0 8px; }
+  label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 4px; }
+  input[type=text], input[type=number], select, textarea {
+    width: 100%; padding: 8px 10px; border: 1px solid var(--border); border-radius: 6px;
+    font: inherit; background: #fff;
+  }
+  textarea { resize: vertical; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  button.btn {
+    background: var(--accent); color: #fff; border: 0; border-radius: 6px;
+    padding: 9px 18px; font: inherit; font-weight: 600; cursor: pointer;
+  }
+  button.btn:disabled { opacity: .5; cursor: not-allowed; }
+  button.btn.ghost { background: var(--accent-soft); color: var(--accent); }
+  button.btn.danger { background: #fee2e2; color: var(--err); }
+  .drop {
+    border: 2px dashed var(--border); border-radius: 10px; padding: 28px;
+    text-align: center; color: var(--muted); cursor: pointer; transition: .15s;
+  }
+  .drop.drag, .drop:hover { border-color: var(--accent); background: var(--accent-soft); }
+  .drop strong { color: var(--text); }
+  .steps { display: flex; gap: 0; margin: 14px 0; }
+  .step { flex: 1; text-align: center; position: relative; color: var(--muted); font-size: 13px; }
+  .step::before {
+    content: ""; display: block; width: 26px; height: 26px; margin: 0 auto 6px;
+    border-radius: 50%; background: var(--border); line-height: 26px;
+  }
+  .step.active::before { background: var(--accent); animation: pulse 1.2s infinite; }
+  .step.done::before { background: var(--ok); }
+  .step.skip { opacity: .4; }
+  .step.active { color: var(--accent); font-weight: 600; }
+  .step.done { color: var(--ok); }
+  @keyframes pulse { 50% { opacity: .55; } }
+  .feed {
+    background: #0f172a; color: #d8e0ee; border-radius: 8px; padding: 12px 14px;
+    max-height: 280px; overflow-y: auto; font-size: 13px; display: none;
+  }
+  .feed .ts { color: #7dd3fc; margin-right: 6px; }
+  .feed .sp { color: #fbbf24; margin-right: 4px; }
+  .banner { border-radius: 8px; padding: 12px 14px; margin: 10px 0; display: none; white-space: pre-wrap; }
+  .banner.err { background: #fee2e2; color: var(--err); }
+  .banner.ok { background: #dcfce7; color: #166534; }
+  .list-item {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px 14px; border: 1px solid var(--border); border-radius: 8px;
+    margin-bottom: 8px; cursor: pointer; background: var(--card);
+  }
+  .list-item:hover { border-color: var(--accent); }
+  .badge { font-size: 12px; padding: 2px 8px; border-radius: 99px; background: var(--accent-soft); color: var(--accent); }
+  .badge.gray { background: #f1f2f4; color: var(--muted); }
+  .badge.ok { background: #dcfce7; color: #166534; }
+  .badge.err { background: #fee2e2; color: var(--err); }
+  .doc { overflow-x: auto; }
+  .doc table { border-collapse: collapse; margin: 8px 0; }
+  .doc th, .doc td { border: 1px solid var(--border); padding: 6px 10px; }
+  .doc th { background: var(--bg); }
+  .muted { color: var(--muted); font-size: 13px; }
+  .section-row { border: 1px solid var(--border); border-radius: 8px; padding: 12px; margin-bottom: 10px; }
+  details.adv { margin-top: 10px; }
+  details.adv summary { cursor: pointer; color: var(--muted); font-size: 13px; }
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+<header>
+  <h1>meeting-record <span>本地會議記錄</span></h1>
+  <nav>
+    <button data-tab="process" class="active">處理會議</button>
+    <button data-tab="history">歷史會議</button>
+    <button data-tab="templates">模板管理</button>
+    <button data-tab="settings">設定</button>
+  </nav>
+</header>
+<main>
+
+<!-- ========== 處理會議 ========== -->
+<section id="tab-process">
+  <div class="card">
+    <h2>處理一場會議</h2>
+    <div class="drop" id="drop">
+      <strong>拖放 Teams 錄影或音訊檔到這裡</strong>，或點擊選擇檔案<br>
+      <span class="muted">支援 mp4 / m4a / mp3 / wav / webm / mkv / mov…</span>
+      <div id="fileName" class="muted" style="margin-top:6px"></div>
+    </div>
+    <input type="file" id="file" class="hidden" accept=".mp4,.m4a,.mp3,.wav,.webm,.mkv,.mov,.flac,.ogg,.aiff,.aac">
+    <div class="grid" style="margin-top:14px">
+      <div><label>摘要模板</label><select id="p-template"></select></div>
+      <div><label>Whisper 模型（large-v3 品質最好）</label>
+        <select id="p-whisper">
+          <option>large-v3</option><option>medium</option><option>small</option><option>base</option>
+        </select></div>
+    </div>
+    <div class="row" style="margin-top:12px">
+      <label style="margin:0"><input type="checkbox" id="p-diarize"> 講者辨識</label>
+      <input type="number" id="p-numspk" placeholder="講者人數（可留空）" min="1" max="20" style="width:180px">
+      <label style="margin:0"><input type="checkbox" id="p-skipsum"> 只轉錄不摘要</label>
+    </div>
+    <details class="adv">
+      <summary>LLM 進階設定</summary>
+      <div class="grid" style="margin-top:8px">
+        <div><label>模型</label><input type="text" id="p-llmmodel"></div>
+        <div><label>Provider</label><select id="p-provider"><option>ollama</option><option>openai</option></select></div>
+        <div style="grid-column:1/-1"><label>Endpoint</label><input type="text" id="p-llmurl"></div>
+      </div>
+    </details>
+    <div style="margin-top:14px"><button class="btn" id="startBtn" disabled>開始處理</button></div>
+  </div>
+
+  <div class="card hidden" id="progressCard">
+    <h2>處理進度 <span class="muted" id="jobFile"></span></h2>
+    <div class="steps">
+      <div class="step" data-stage="extracting">抽取音訊</div>
+      <div class="step" data-stage="transcribing">轉錄</div>
+      <div class="step" data-stage="diarizing">講者辨識</div>
+      <div class="step" data-stage="summarizing">生成摘要</div>
+    </div>
+    <div class="muted" id="chunkInfo"></div>
+    <div class="feed" id="feed"></div>
+    <div class="banner err" id="errBanner"></div>
+    <div class="banner ok" id="okBanner"></div>
+  </div>
+</section>
+
+<!-- ========== 歷史會議 ========== -->
+<section id="tab-history" class="hidden">
+  <div class="card" id="meetingList"><h2>歷史會議</h2><div id="meetings"></div></div>
+  <div class="card hidden" id="meetingView">
+    <div class="row" style="justify-content:space-between">
+      <h2 id="mv-title" style="margin:0"></h2>
+      <button class="btn ghost" onclick="closeMeeting()">← 返回列表</button>
+    </div>
+    <div class="row" style="margin:12px 0">
+      <select id="mv-template" style="width:auto"></select>
+      <button class="btn ghost" id="mv-resum">重新生成摘要</button>
+      <span class="muted" id="mv-resum-status"></span>
+    </div>
+    <h3>會議紀錄</h3>
+    <div class="doc" id="mv-summary"><span class="muted">（尚未生成摘要）</span></div>
+    <h3>逐字稿</h3>
+    <div class="doc" id="mv-transcript"></div>
+  </div>
+</section>
+
+<!-- ========== 模板管理 ========== -->
+<section id="tab-templates" class="hidden">
+  <div class="card">
+    <div class="row" style="justify-content:space-between">
+      <h2 style="margin:0">摘要模板</h2>
+      <button class="btn" onclick="editTemplate(null)">＋ 新增模板</button>
+    </div>
+    <div id="tplList" style="margin-top:12px"></div>
+  </div>
+  <div class="card hidden" id="tplEditor">
+    <h2 id="tpl-editor-title">編輯模板</h2>
+    <div class="grid">
+      <div><label>識別名稱（存檔名，英數/中文/底線）</label><input type="text" id="t-stem"></div>
+      <div><label>顯示名稱</label><input type="text" id="t-name"></div>
+      <div style="grid-column:1/-1"><label>描述</label><input type="text" id="t-desc"></div>
+    </div>
+    <h3>章節</h3>
+    <div id="t-sections"></div>
+    <button class="btn ghost" onclick="addSection()">＋ 加一個章節</button>
+    <div class="row" style="margin-top:14px">
+      <button class="btn" onclick="saveTemplate()">儲存</button>
+      <button class="btn ghost" onclick="hideEditor()">取消</button>
+      <button class="btn danger hidden" id="t-delete" onclick="deleteTemplate()">刪除此模板</button>
+    </div>
+    <div class="banner err" id="tplErr"></div>
+  </div>
+</section>
+
+<!-- ========== 設定 ========== -->
+<section id="tab-settings" class="hidden">
+  <div class="card">
+    <h2>環境狀態</h2>
+    <div class="row" id="statusRow"><span class="muted">檢查中…</span></div>
+  </div>
+  <div class="card">
+    <h2>預設值（新任務自動帶入）</h2>
+    <div class="grid">
+      <div><label>摘要模板</label><select id="s-template"></select></div>
+      <div><label>Whisper 模型</label>
+        <select id="s-whisper"><option>large-v3</option><option>medium</option><option>small</option><option>base</option></select></div>
+      <div><label>轉錄語言</label><input type="text" id="s-language"></div>
+      <div><label>LLM 模型</label><input type="text" id="s-llmmodel"></div>
+      <div><label>LLM Endpoint</label><input type="text" id="s-llmurl"></div>
+      <div><label>Provider</label><select id="s-provider"><option>ollama</option><option>openai</option></select></div>
+    </div>
+    <div class="row" style="margin-top:10px">
+      <label style="margin:0"><input type="checkbox" id="s-diarize"> 預設開啟講者辨識</label>
+    </div>
+    <div style="margin-top:14px"><button class="btn" onclick="saveSettings()">儲存設定</button>
+      <span class="muted" id="saveMsg"></span></div>
+  </div>
+</section>
+
+</main>
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+const api = async (path, opts) => {
+  const r = await fetch(path, opts);
+  const body = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(body.detail || `HTTP ${r.status}`);
+  return body;
+};
+
+/* ---- 分頁 ---- */
+document.querySelectorAll("nav button").forEach(b => b.onclick = () => showTab(b.dataset.tab));
+function showTab(tab) {
+  document.querySelectorAll("nav button").forEach(b => b.classList.toggle("active", b.dataset.tab === tab));
+  ["process", "history", "templates", "settings"].forEach(t =>
+    $("tab-" + t).classList.toggle("hidden", t !== tab));
+  if (tab === "history") loadMeetings();
+  if (tab === "templates") loadTemplates();
+  if (tab === "settings") loadStatus();
+}
+
+/* ---- 設定 ---- */
+let settings = null;
+async function loadSettings() {
+  settings = await api("/api/settings");
+  for (const [el, key] of [["p-llmmodel","llm_model"],["p-llmurl","llm_url"],["p-provider","provider"],
+                           ["s-language","language"],["s-llmmodel","llm_model"],["s-llmurl","llm_url"],["s-provider","provider"]])
+    $(el).value = settings[key];
+  $("p-whisper").value = settings.whisper_model;
+  $("s-whisper").value = settings.whisper_model;
+  $("p-diarize").checked = settings.diarize;
+  $("s-diarize").checked = settings.diarize;
+}
+async function saveSettings() {
+  const body = {
+    template: $("s-template").value, language: $("s-language").value,
+    whisper_model: $("s-whisper").value, diarize: $("s-diarize").checked,
+    llm_model: $("s-llmmodel").value, llm_url: $("s-llmurl").value, provider: $("s-provider").value,
+  };
+  await api("/api/settings", {method: "PUT", headers: {"Content-Type": "application/json"}, body: JSON.stringify(body)});
+  $("saveMsg").textContent = "已儲存 ✓";
+  setTimeout(() => $("saveMsg").textContent = "", 2000);
+  await loadSettings();
+}
+async function loadStatus() {
+  const s = await api("/api/status?llm_url=" + encodeURIComponent($("s-llmurl").value || "http://localhost:11434"));
+  const badge = (ok, okText, errText) => `<span class="badge ${ok ? "ok" : "err"}">${ok ? okText : errText}</span>`;
+  $("statusRow").innerHTML =
+    badge(s.ollama, "Ollama 連線正常", "Ollama 未啟動") +
+    badge(s.hf_token, "HF token 已設定", "HF token 未設定（講者辨識需要）") +
+    badge(s.diarize_installed, "講者辨識已安裝", "講者辨識未安裝（uv sync --extra diarize）");
+}
+
+/* ---- 模板下拉選單 ---- */
+async function fillTemplateSelects() {
+  const {templates} = await api("/api/templates");
+  for (const sel of ["p-template", "s-template", "mv-template"]) {
+    $(sel).innerHTML = templates.map(t =>
+      `<option value="${t.stem}">${t.template.name}${t.builtin ? "" : "（自訂）"}</option>`).join("");
+  }
+  if (settings) { $("p-template").value = settings.template; $("s-template").value = settings.template; }
+}
+
+/* ---- 處理會議 ---- */
+let selectedFile = null;
+$("drop").onclick = () => $("file").click();
+$("drop").ondragover = e => { e.preventDefault(); $("drop").classList.add("drag"); };
+$("drop").ondragleave = () => $("drop").classList.remove("drag");
+$("drop").ondrop = e => { e.preventDefault(); $("drop").classList.remove("drag"); if (e.dataTransfer.files[0]) setFile(e.dataTransfer.files[0]); };
+$("file").onchange = () => { if ($("file").files[0]) setFile($("file").files[0]); };
+function setFile(f) { selectedFile = f; $("fileName").textContent = `已選擇：${f.name}（${(f.size/1048576).toFixed(1)} MB）`; $("startBtn").disabled = false; }
+
+$("startBtn").onclick = async () => {
+  if (!selectedFile) return;
+  const options = {
+    template: $("p-template").value, language: settings ? settings.language : "zh",
+    whisper_model: $("p-whisper").value,
+    diarize: $("p-diarize").checked,
+    num_speakers: $("p-numspk").value ? parseInt($("p-numspk").value) : null,
+    llm_model: $("p-llmmodel").value, llm_url: $("p-llmurl").value,
+    provider: $("p-provider").value, skip_summary: $("p-skipsum").checked,
+  };
+  const fd = new FormData();
+  fd.append("file", selectedFile);
+  fd.append("options", JSON.stringify(options));
+  $("startBtn").disabled = true;
+  try {
+    await api("/api/jobs", {method: "POST", body: fd});
+    resetProgress(selectedFile.name, options.diarize, options.skip_summary);
+    watchEvents(-1);
+  } catch (e) {
+    alert(e.message);
+    $("startBtn").disabled = false;
+  }
+};
+
+function resetProgress(filename, withDiarize, skipSummary) {
+  $("progressCard").classList.remove("hidden");
+  $("jobFile").textContent = filename || "";
+  $("feed").innerHTML = ""; $("feed").style.display = "none";
+  $("errBanner").style.display = "none"; $("okBanner").style.display = "none";
+  $("chunkInfo").textContent = "";
+  document.querySelectorAll(".step").forEach(s => {
+    s.classList.remove("active", "done", "skip");
+    if (s.dataset.stage === "diarizing" && !withDiarize) s.classList.add("skip");
+    if (s.dataset.stage === "summarizing" && skipSummary) s.classList.add("skip");
+  });
+  $("progressCard").scrollIntoView({behavior: "smooth"});
+}
+
+const STAGE_ORDER = ["extracting", "transcribing", "diarizing", "summarizing"];
+function setStage(stage) {
+  const idx = STAGE_ORDER.indexOf(stage);
+  document.querySelectorAll(".step").forEach(s => {
+    const i = STAGE_ORDER.indexOf(s.dataset.stage);
+    s.classList.remove("active");
+    if (i < idx) s.classList.add("done");
+    if (i === idx) { s.classList.add("active"); s.classList.remove("done"); }
+  });
+}
+
+let es = null;
+function watchEvents(after) {
+  if (es) es.close();
+  es = new EventSource("/api/jobs/events?after=" + after);
+  es.onmessage = e => handleEvent(JSON.parse(e.data));
+  es.addEventListener("end", () => { es.close(); es = null; });
+}
+function handleEvent(ev) {
+  if (ev.type === "state") {
+    const st = ev.data.state;
+    if (STAGE_ORDER.includes(st)) setStage(st);
+    if (st === "done") {
+      document.querySelectorAll(".step:not(.skip)").forEach(s => { s.classList.remove("active"); s.classList.add("done"); });
+      $("startBtn").disabled = !selectedFile;
+    }
+    if (st === "error") $("startBtn").disabled = !selectedFile;
+  } else if (ev.type === "segment") {
+    $("feed").style.display = "block";
+    const ts = new Date(ev.data.start * 1000).toISOString().substring(11, 19);
+    const line = document.createElement("div");
+    line.innerHTML = `<span class="ts">[${ts}]</span>` + escapeHtml(ev.data.text);
+    $("feed").appendChild(line);
+    $("feed").scrollTop = $("feed").scrollHeight;
+  } else if (ev.type === "speakers") {
+    $("chunkInfo").textContent = `辨識出 ${ev.data.count} 位講者`;
+  } else if (ev.type === "chunk_progress") {
+    $("chunkInfo").textContent = `長會議分段摘要中 ${ev.data.current}/${ev.data.total}`;
+  } else if (ev.type === "done") {
+    $("okBanner").style.display = "block";
+    $("okBanner").innerHTML = `處理完成：<a href="#" onclick="openMeetingByName('${ev.data.meeting}');return false">${ev.data.meeting}</a>`;
+  } else if (ev.type === "error") {
+    $("errBanner").style.display = "block";
+    $("errBanner").textContent = "錯誤：" + ev.data.message;
+  }
+}
+function escapeHtml(s) { const d = document.createElement("div"); d.textContent = s; return d.innerHTML; }
+
+/* 頁面載入時若有進行中任務，恢復畫面 */
+async function resumeJob() {
+  const snap = await api("/api/jobs/current");
+  if (snap.state === "idle" && snap.events.length === 0) return;
+  resetProgress(snap.info.filename || snap.info.meeting || "", true, false);
+  snap.events.forEach(handleEvent);
+  if (!["done", "error", "idle"].includes(snap.state)) watchEvents(snap.events.length - 1);
+}
+
+/* ---- 歷史會議 ---- */
+async function loadMeetings() {
+  const {meetings} = await api("/api/meetings");
+  $("meetings").innerHTML = meetings.length ? meetings.map(m => `
+    <div class="list-item" onclick="openMeetingByName('${m.name}')">
+      <span>${m.name}</span>
+      <span>${m.has_summary ? '<span class="badge">已有摘要</span>' : '<span class="badge gray">僅逐字稿</span>'}
+        <span class="muted">${m.modified}</span></span>
+    </div>`).join("") : '<p class="muted">還沒有處理過的會議。</p>';
+}
+async function openMeetingByName(name) {
+  showTab("history");
+  const m = await api("/api/meetings/" + encodeURIComponent(name));
+  $("meetingList").classList.add("hidden");
+  $("meetingView").classList.remove("hidden");
+  $("mv-title").textContent = m.name;
+  $("mv-summary").innerHTML = m.summary_html || '<span class="muted">（尚未生成摘要）</span>';
+  $("mv-transcript").innerHTML = m.transcript_html;
+  $("mv-resum").dataset.name = name;
+}
+function closeMeeting() { $("meetingView").classList.add("hidden"); $("meetingList").classList.remove("hidden"); loadMeetings(); }
+$("mv-resum").onclick = async () => {
+  const name = $("mv-resum").dataset.name;
+  try {
+    await api(`/api/meetings/${encodeURIComponent(name)}/resummarize`, {
+      method: "POST", headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({template: $("mv-template").value,
+        llm_model: settings.llm_model, llm_url: settings.llm_url, provider: settings.provider}),
+    });
+    $("mv-resum-status").textContent = "生成中…";
+    const poll = setInterval(async () => {
+      const snap = await api("/api/jobs/current");
+      if (snap.state === "done") { clearInterval(poll); $("mv-resum-status").textContent = "完成 ✓"; openMeetingByName(name); }
+      if (snap.state === "error") {
+        clearInterval(poll);
+        const err = snap.events.filter(e => e.type === "error").pop();
+        $("mv-resum-status").textContent = "失敗：" + (err ? err.data.message : "未知錯誤");
+      }
+    }, 1500);
+  } catch (e) { $("mv-resum-status").textContent = e.message; }
+};
+
+/* ---- 模板管理 ---- */
+let editingBuiltin = false;
+async function loadTemplates() {
+  const {templates} = await api("/api/templates");
+  $("tplList").innerHTML = templates.map(t => `
+    <div class="list-item" onclick='editTemplate(${JSON.stringify(t).replace(/'/g, "&#39;")})'>
+      <span><strong>${t.template.name}</strong> <span class="muted">${t.stem}</span><br>
+        <span class="muted">${t.template.description || ""}</span></span>
+      <span class="badge ${t.builtin ? "gray" : ""}">${t.builtin ? "內建（唯讀）" : "自訂"}</span>
+    </div>`).join("");
+}
+function editTemplate(t) {
+  $("tplEditor").classList.remove("hidden");
+  $("tplErr").style.display = "none";
+  editingBuiltin = t ? t.builtin : false;
+  $("tpl-editor-title").textContent = t ? (t.builtin ? "檢視內建模板（另存為自訂）" : "編輯模板") : "新增模板";
+  $("t-stem").value = t ? (t.builtin ? t.stem + "_custom" : t.stem) : "";
+  $("t-stem").disabled = t ? !t.builtin : false;
+  $("t-name").value = t ? t.template.name : "";
+  $("t-desc").value = t ? t.template.description : "";
+  $("t-delete").classList.toggle("hidden", !t || t.builtin);
+  $("t-sections").innerHTML = "";
+  (t ? t.template.sections : [{title: "", instruction: "", format: "paragraph"}]).forEach(addSection);
+  $("tplEditor").scrollIntoView({behavior: "smooth"});
+}
+function addSection(sec) {
+  const s = sec && sec.title !== undefined ? sec : {title: "", instruction: "", format: "paragraph"};
+  const div = document.createElement("div");
+  div.className = "section-row";
+  div.innerHTML = `
+    <div class="grid">
+      <div><label>章節標題</label><input type="text" class="sec-title" value="${escapeAttr(s.title)}"></div>
+      <div><label>格式</label><select class="sec-format">
+        <option value="paragraph"${s.format === "paragraph" ? " selected" : ""}>段落</option>
+        <option value="list"${s.format === "list" ? " selected" : ""}>條列</option>
+        <option value="table"${s.format === "table" ? " selected" : ""}>表格</option>
+      </select></div>
+    </div>
+    <label style="margin-top:8px">給 LLM 的指示</label>
+    <textarea class="sec-instr" rows="2">${escapeHtml(s.instruction)}</textarea>
+    <button class="btn danger" style="margin-top:8px;padding:4px 12px" onclick="this.parentElement.remove()">移除章節</button>`;
+  $("t-sections").appendChild(div);
+}
+function escapeAttr(s) { return String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;"); }
+function hideEditor() { $("tplEditor").classList.add("hidden"); }
+async function deleteTemplate() {
+  if (!confirm("確定刪除模板「" + $("t-stem").value + "」？")) return;
+  try {
+    await api("/api/templates/" + encodeURIComponent($("t-stem").value), {method: "DELETE"});
+    hideEditor(); loadTemplates(); fillTemplateSelects();
+  } catch (e) {
+    $("tplErr").style.display = "block"; $("tplErr").textContent = e.message;
+  }
+}
+async function saveTemplate() {
+  const sections = [...document.querySelectorAll(".section-row")].map(r => ({
+    title: r.querySelector(".sec-title").value.trim(),
+    instruction: r.querySelector(".sec-instr").value.trim(),
+    format: r.querySelector(".sec-format").value,
+  })).filter(s => s.title);
+  const payload = {
+    stem: $("t-stem").value.trim(),
+    template: {name: $("t-name").value.trim() || $("t-stem").value.trim(), description: $("t-desc").value.trim(), sections},
+  };
+  try {
+    await api("/api/templates", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(payload)});
+    hideEditor(); loadTemplates(); fillTemplateSelects();
+  } catch (e) {
+    $("tplErr").style.display = "block"; $("tplErr").textContent = e.message;
+  }
+}
+
+/* ---- 初始化 ---- */
+(async () => {
+  await loadSettings();
+  await fillTemplateSelects();
+  await resumeJob();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+[project]
+name = "meeting-record"
+version = "0.1.0"
+description = "本地會議記錄工具：Teams 錄影 → Whisper 轉錄 → LLM 會議紀錄，資料不出內網"
+readme = "README.md"
+authors = [
+    { name = "a23444452", email = "a23444452@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.139.0",
+    "faster-whisper>=1.2.1",
+    "httpx>=0.28.1",
+    "markdown>=3.10.2",
+    "pydantic>=2.13.4",
+    "python-multipart>=0.0.32",
+    "rich>=15.0.0",
+    "typer>=0.26.8",
+    "uvicorn>=0.50.0",
+]
+
+[project.optional-dependencies]
+diarize = [
+    "pyannote-audio>=4.0",
+]
+
+[project.scripts]
+meeting-record = "meeting_record.cli:app"
+
+[build-system]
+requires = ["uv_build>=0.9.8,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "playwright>=1.61.0",
+    "pytest>=9.1.1",
+    "ruff>=0.15.20",
+]
